@@ -1,0 +1,106 @@
+﻿<Window x:Name="WindowReg" x:Class="TRPO.Window2"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TRPO"
+        mc:Ignorable="d"
+        Title="Window2" Height="516.568" Width="459.171" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF511D1D" Offset="0"/>
+            <GradientStop Color="#FF954747" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,0,583,0">
+        <Grid RenderTransformOrigin="0.5,0.5" Margin="-2,1,-459,-15">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1B0C0E" Offset="0"/>
+                    <GradientStop Color="#FF6C2E36" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.117"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <TextBox x:Name="TB1" HorizontalAlignment="Left" materialDesign:TextFieldAssist.UnderlineBrush="Wheat" materialDesign:HintAssist.Hint="Имя"  FontFamily="Times New Roman" Height="41" Margin="125,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" TextInput="TB1_TextInput" MaxLength="15" PreviewTextInput="TB1_PreviewTextInput"/>
+            <TextBox x:Name="TB2" HorizontalAlignment="Left" materialDesign:TextFieldAssist.UnderlineBrush="Wheat" materialDesign:HintAssist.Hint="Фамилия"   FontFamily="Times New Roman" Height="41" Margin="125,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" TextInput="TB1_TextInput" MaxLength="15" PreviewTextInput="TB1_PreviewTextInput"/>
+            <Button x:Name="Button1" Content="Зарегистрироваться" FontSize="24" FontWeight="Bold"     Foreground="#FFE0E6E7"  Background="{x:Null}" BorderBrush="#FFB4ABAB" BorderThickness="2"   Margin="98,452,74,31" RenderTransformOrigin="0.558,0.885" Height="Auto" Click="Button1_Click" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}" >
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="20">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF873838"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF333F47"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF7A4848"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF333F47"/>
+                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                                <Setter Property="Foreground" Value="#FF838383"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+                <!--<Button.Template TargetType="Button1" Border.CornerRadius="10"/>-->
+
+
+            </Button>
+            <Grid x:Name="ToolBar" Background="Transparent" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="458" MouseDown="ToolBar_MouseDown">
+                <Image x:Name="closer" HorizontalAlignment="Left" Height="12" Margin="431,10,0,0" VerticalAlignment="Top" Width="17" MouseDown="closer_MouseDown" RenderTransformOrigin="0.481,0.286">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="крест.png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="крестнаведение.png"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image x:Name="remover" HorizontalAlignment="Left" Height="9" Margin="403,13,0,0" VerticalAlignment="Top" Width="16" MouseDown="remover_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="тире.png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="тиренаведение.png"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+
+            </Grid>
+            <Label Content="Регистрация" FontFamily="./#Futurespore Cyrillic" HorizontalAlignment="Left" Margin="98,92,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFE0E6E7" Height="83" Width="304" FontSize="44"/>
+            <TextBox x:Name="TB3" HorizontalAlignment="Left" materialDesign:TextFieldAssist.UnderlineBrush="Wheat" materialDesign:HintAssist.Hint="Отчество"  FontFamily="Times New Roman" Height="40" Margin="125,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" TextInput="TB1_TextInput" MaxLength="15" PreviewTextInput="TB1_PreviewTextInput"/>
+            <TextBox x:Name="TB4" HorizontalAlignment="Left" materialDesign:TextFieldAssist.UnderlineBrush="Wheat" materialDesign:HintAssist.Hint="Логин"  FontFamily="Times New Roman" Height="41" Margin="125,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" MaxLength="15"/>
+            <TextBox x:Name="TB5" HorizontalAlignment="Left" materialDesign:TextFieldAssist.UnderlineBrush="Wheat" materialDesign:HintAssist.Hint="Пароль"  FontFamily="Times New Roman" Height="42" Margin="125,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" MaxLength="15"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
